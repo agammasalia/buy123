@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<title>Buy123</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/ProductsCtrl.js"></script>
+	<script src="js/controllers/ProductsDetailCtrl.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-app="buy123" ng-controller="MainCtrl">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Buy123</a>
+			</div>
+			<div class="navbar-header navbar-right">
+				<a class="navbar-brand" href="http://localhost:8080/buy123/RegistrationForm.jsp"></a>
+				<a class="navbar-brand" href="http://localhost:8080/buy123/LoginForm.jsp">Login</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="well">
+			<div class="row">
+				<div class="jumbotron text-center">
+					<h1>Welcome to Buy123.com</h1>
+				</div>
+				<div class="col-md-2">
+					<h2><span class="label label-primary btn-large" style="padding-left: 35px; padding-right: 35px;">Categories</span></h2>
+					<div ng-repeat="product in products">
+						<div class="list-group-item"><a href="/store/{{product.url}}">{{product.name}}</a></div>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="navbar-brand">Copyright</div>
+			</div>
+			<div class="navbar-header navbar-right">
+				<div class="navbar-brand">Like us On Facebook</div>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>
